@@ -8,10 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
-    <title>后台管理中心</title>  
+    <title>后台管理中心</title>
     <link rel="stylesheet" href="<?=Yii::$app->request->baseUrl?>/css/pintuer.css">
     <link rel="stylesheet" href="<?=Yii::$app->request->baseUrl?>/css/admin.css">
-    <script src="<?=Yii::$app->request->baseUrl?>/js/jquery.js"></script>   
+    <script src="<?=Yii::$app->request->baseUrl?>/js/jquery.js"></script>
 </head>
 <body style="background-color:#f2f9fd;">
 <div class="header bg-main">
@@ -26,23 +26,28 @@
   <ul style="display:block">
     <li><a href="<?=Url::toRoute(['index/info'])?>" target="right"><span class="icon-caret-right"></span>网站设置</a></li>
     <li><a href="<?=Url::toRoute(['admin/pass'])?>" target="right"><span class="icon-caret-right"></span>修改密码</a></li>
-    <li><a href="<?=Url::toRoute(['page/page'])?>" target="right"><span class="icon-caret-right"></span>单页管理</a></li>  
-    <li><a href="<?=Url::toRoute(['adv/adv'])?>" target="right"><span class="icon-caret-right"></span>首页轮播</a></li>   
-    <li><a href="<?=Url::toRoute(['book/book'])?>" target="right"><span class="icon-caret-right"></span>留言管理</a></li>     
+    <li><a href="<?=Url::toRoute(['page/page'])?>" target="right"><span class="icon-caret-right"></span>单页管理</a></li>
+    <li><a href="<?=Url::toRoute(['adv/adv'])?>" target="right"><span class="icon-caret-right"></span>首页轮播</a></li>
+    <li><a href="<?=Url::toRoute(['book/book'])?>" target="right"><span class="icon-caret-right"></span>留言管理</a></li>
     <li><a href="<?=Url::toRoute(['column/column'])?>" target="right"><span class="icon-caret-right"></span>栏目管理</a></li>
-  </ul>   
+  </ul>
+   <h2><span class="icon-pencil-square-o"></span>分类管理</h2>
+  <ul>
+    <li><a href="<?=Url::toRoute(['cate/addcate'])?>" target="right"><span class="icon-caret-right"></span>分类添加</a></li>
+    <li><a href="<?=Url::toRoute(['cate/cate'])?>" target="right"><span class="icon-caret-right"></span>分类列表</a></li>
+  </ul>
   <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
   <ul>
     <li><a href="<?=Url::toRoute(['content/contentlist'])?>" target="right"><span class="icon-caret-right"></span>内容管理</a></li>
     <li><a href="<?=Url::toRoute(['content/contentadd'])?>" target="right"><span class="icon-caret-right"></span>添加内容</a></li>
-    <li><a href="<?=Url::toRoute(['cate/cate'])?>" target="right"><span class="icon-caret-right"></span>分类管理</a></li>        
-  </ul>  
+    <li><a href="<?=Url::toRoute(['cate/cate'])?>" target="right"><span class="icon-caret-right"></span>分类管理</a></li>
+  </ul>
 </div>
 <script type="text/javascript">
 $(function(){
   $(".leftnav h2").click(function(){
-	  $(this).next().slideToggle(200);	
-	  $(this).toggleClass("on"); 
+	  $(this).next().slideToggle(200);
+	  $(this).toggleClass("on");
   })
   $(".leftnav ul li a").click(function(){
 	    $("#a_leader_txt").text($(this).text());
