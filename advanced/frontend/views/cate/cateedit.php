@@ -15,7 +15,22 @@
 <div class="panel admin-panel margin-top">
   <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改分类</strong></div>
   <div class="body-content">
-    <form method="post" class="form-x" action="">        
+    <form method="post" class="form-x" action="">
+        <div class="form-group">
+            <div class="label">
+                <label>上级分类：</label>
+            </div>
+            <div class="field">
+                <select name="pid" class="input w50">
+                    <option value="">请选择分类</option>
+                    <option value="">产品分类</option>
+                    <option value="">产品分类</option>
+                    <option value="">产品分类</option>
+                    <option value="">产品分类</option>
+                </select>
+                <div class="tips">不选择上级分类默认为一级分类</div>
+            </div>
+        </div>
       <div class="form-group">
         <div class="label">
           <label>分类标题：</label>
