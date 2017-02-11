@@ -31,18 +31,25 @@ class CateController extends Controller
         if($request->isPost) {
             //print_r($_FILES['type_img']);die;
             $data = Yii::$app->request->post();
-//            $type = array('image/gif', 'image/jpeg', 'image/png', 'image/pjpeg', 'image/x-png');
-//            $uploads = new Uploadfile;
-//            $uploads->Uploadfile($_FILES['type_img'], 'typez/upload',1221024000,$type);
-//            $num = $uploads->upload();
-//            if($num!=0){
-//                $b_cover=$uploads->getSaveInfo();
+            $upload=new UploadedFile(); //实例化上传类
+            //print_r($upload);die;
+            $upload->getInstanceByName('type_img'); //获取文件原名称
+            $img=$_FILES['type_img']; //获取上传文件参数
+            //print_r($img);die;
+            $upload->tempName=$img['tmp_name']; //设置上传的文件的临时名称
+            //创建目录
+            $dir='typez/upload/';
+            $rand = md5(time() . mt_rand(0,10000));
+            $name= $dir.$rand.'.'.'jpg';
+            //print_r($name);die;
+            $arr=$upload->saveAs($name,true); //保存文件
+            if($arr){
                 $article = new Type();
                 $article->type_name = $data['type_name'];
                 $article->parent_id = $data['parent_id'];
                 $article->type_is_show = $data['type_is_show'];
                 $article->type_sort = $data['sort'];
-//                $article->type_img = $b_cover[0]['newpath'];
+                $article->type_img = $name;
                 $res=$article->save();
                 if ($res) {
                     //Yii::$app->getSession()->setFlash('errors', '保存成功');
@@ -51,9 +58,10 @@ class CateController extends Controller
                     //Yii::$app->getSession()->setFlash('error', '保存失败');
                     return $this->redirect("?r=cate/addcate");
                 }
-//            }else{
-//echo "x";
-//            }
+            }else{
+                echo "文件上传错误";
+            }
+
         }else{
             $type=new Type();
             $info=$type::find()->asArray()->all();
