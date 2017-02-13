@@ -16,140 +16,129 @@
 <div class="panel admin-panel">
   <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
   <div class="padding border-bottom">
-    <button type="button" class="button border-yellow" onclick="window.location.href='#add'"><span class="icon-plus-square-o"></span> 添加分类</button>
+    <button type="button" class="button border-yellow" onclick="window.location.href='?r=cate/addcate'">
+        <span class="icon-plus-square-o"></span>
+        添加分类
+    </button>
   </div>
   <table class="table table-hover text-center">
     <tr>
       <th width="5%">ID</th>
-      <th width="15%">一级分类</th>
-      <th width="10%">排序</th>
+      <th width="15%">名称</th>
+      <th width="10%">是否显示</th>
       <th width="10%">操作</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="<?=Url::toRoute(['cate/cateedit'])?>"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <?php foreach($data as $key=>$val){ ?>
+    <tr class="tr_d" parent_id="<?php echo $val['parent_id']?>" node_id="<?php echo $val['type_id']?>" <?php if($val['parent_id']!=0){?> style="display:none" <?php }?> >
+      <td><?php echo $val['type_id']?></td>
+      <td style="text-align:left; padding-left:20px;" width="20%" >
+          <?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',$val['flag'])?>
+          <a href="javascript:void(0)" onclick="displayData(this);" alt="打开">[+]</a>
+          <?php echo $val['type_name']?>
+      </td>
+      <td ids="<?php echo $val['type_id']?>">
+          <?php if($val['type_is_show']==1){?>
+              <span class="is_show" style="cursor:pointer">显示</span>
+          <?php }else{ ?>
+              <span class="is_show" style="cursor:pointer">不显示</span>
+          <?php }?>
+      </td>
+      <td>
+          <div class="button-group">
+              <a class="button border-main" href="<?=Url::toRoute(['cate/cateedit'])?>&tid=<?php echo $val['type_id']?>">
+                  <span class="icon-edit"></span> 修改
+              </a>
+              <a class="button border-red" href="javascript:void(0)" onclick="return del(<?php echo $val['type_id']?>,this)">
+                  <span class="icon-trash-o"></span> 删除
+              </a>
+          </div>
+      </td>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="<?=Url::toRoute(['cate/cateedit'])?>"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="<?=Url::toRoute(['cate/cateedit'])?>"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="<?=Url::toRoute(['cate/cateedit'])?>"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="<?=Url::toRoute(['cate/cateedit'])?>"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="<?=Url::toRoute(['cate/cateedit'])?>"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
+      <?php }?>
   </table>
 </div>
 <script type="text/javascript">
-function del(id,mid){
-	if(confirm("您确定要删除吗?")){			
-		
+function del(id,obj){
+    var _this=$(obj);
+	if(confirm("您确定要删除吗?")){
+        $.ajax({
+            type: "POST",
+            url: "?r=cate/detele",
+            data: {id:id},
+            dataType:"json",
+            success: function(msg){
+                //alert(msg)
+                if(msg.code==1000){
+                    _this.parents('tr').remove();
+                }else{
+                    alert(msg.arr);
+                }
+            }
+        });
 	}
 }
+    $(document).ready(function(){
+        $(".is_show").click(function(){
+            var _this=$(this);
+            var showhtml=_this.html();
+            var tid=_this.parents('td').attr('ids');
+            if(showhtml=="显示"){
+                var is_show=0;
+            }else{
+                var is_show=1;
+            }
+            $.ajax({
+                type: "POST",
+                url: "?r=cate/showupdate",
+                data: {tid:tid,is_show:is_show},
+                dataType:"json",
+                success: function(msg){
+                    if(msg.code==1000){
+                        if(is_show==0){
+                            _this.html("不显示");
+                        }else{
+                            _this.html("显示");
+                        }
+                    }else{
+                        alert(msg.arr)
+                    }
+                }
+            });
+        })
+    });
+
+function displayData(_self)
+{
+    if(_self.alt == "关闭")
+    {
+        jqshow($(_self).parent().parent().attr('node_id'), 'hide');
+        $(_self).html('[+]');
+        _self.alt = '打开';
+    }
+    else
+    {
+        jqshow($(_self).parent().parent().attr('node_id'), 'show');
+        $(_self).html('[-]');
+        _self.alt = '关闭';
+    }
+}
+function jqshow(id,isshow) {
+    var obj = $("table tr[parent_id='"+id+"']");
+    if (obj.length>0)
+    {
+        obj.each(function(i) {
+            jqshow($(this).attr('node_id'), isshow);
+        });
+        if (isshow=='hide')
+        {
+            obj.hide();
+        }
+        else
+        {
+            obj.show();
+        }
+    }
+}
 </script>
-<div class="panel admin-panel margin-top">
-  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加内容</strong></div>
-  <div class="body-content">
-    <form method="post" class="form-x" action="">
-      <div class="form-group">
-        <div class="label">
-          <label>上级分类：</label>
-        </div>
-        <div class="field">
-          <select name="pid" class="input w50">
-            <option value="">请选择分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
-          </select>
-          <div class="tips">不选择上级分类默认为一级分类</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>分类标题：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input w50" name="title" />
-          <div class="tips"></div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>批量添加：</label>
-        </div>
-        <div class="field">
-          <textarea type="text" class="input w50" name="tits" style="height:150px;" placeholder="多个分类标题请转行"></textarea>
-          <div class="tips">多个分类标题请转行</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>关键字标题：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_title" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>分类关键字：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_keywords" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>关键字描述：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_desc"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>排序：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
-          <div class="tips"></div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label></label>
-        </div>
-        <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
 </body>
 </html>
