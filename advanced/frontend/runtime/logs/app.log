@@ -10275,3 +10275,395 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1486946741.8477
     'REQUEST_TIME' => 1486946741
 ]
+2017-02-13 08:54:34 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(67): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionAddcate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('addcate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/addcate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist
+The SQL being executed was: SELECT * FROM `type` in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Schema.php:631
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(67): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionAddcate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('addcate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/addcate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'study.type' doesn't exist
+)
+
+2017-02-13 08:54:33 [::1][-][-][info][application] $_GET = [
+    'r' => 'cate/addcate'
+]
+
+$_COOKIE = [
+    'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3' => '1482387972,1484746719'
+    'Hm_lvt_c2253576311110c0271361e3f50ca002' => '1482387972,1484746719'
+    'iweb_safecode' => '61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ'
+    'pgv_pvi' => '7560350720'
+    'sYQDUGqqzHsearch_history' => '%u9633%u6CC9%u5427|1'
+    '_trs_uv' => '20bj_6_ixwimm9z'
+    '_trs_ua_s_1' => '5qj6_6_ixwimm9y'
+    'advanced-frontend' => '5harq7jhfl4skp06ct4jdk3eh5'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpStudy\\php55n;E:\\php4月Linux\\svn客户端\\svn\\bin;;E:\\git\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php70n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2120'
+    'SCRIPT_NAME' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_URI' => '/Learn_more/advanced/frontend/web/index.php?r=cate%2Faddcate'
+    'QUERY_STRING' => 'r=cate%2Faddcate'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '50773'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/Learn_more/advanced/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3=1482387972,1484746719; Hm_lvt_c2253576311110c0271361e3f50ca002=1482387972,1484746719; iweb_safecode=61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ; pgv_pvi=7560350720; sYQDUGqqzHsearch_history=%u9633%u6CC9%u5427%7C1; _trs_uv=20bj_6_ixwimm9z; _trs_ua_s_1=5qj6_6_ixwimm9y; advanced-frontend=5harq7jhfl4skp06ct4jdk3eh5'
+    'HTTP_REFERER' => 'http://localhost/Learn_more/advanced/frontend/web/index.php?r=index/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486947273.9884
+    'REQUEST_TIME' => 1486947273
+]
+2017-02-13 08:54:37 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(21): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionCate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/cate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist
+The SQL being executed was: SELECT * FROM `type` in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Schema.php:631
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(21): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionCate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/cate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'study.type' doesn't exist
+)
+
+2017-02-13 08:54:37 [::1][-][-][info][application] $_GET = [
+    'r' => 'cate/cate'
+]
+
+$_COOKIE = [
+    'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3' => '1482387972,1484746719'
+    'Hm_lvt_c2253576311110c0271361e3f50ca002' => '1482387972,1484746719'
+    'iweb_safecode' => '61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ'
+    'pgv_pvi' => '7560350720'
+    'sYQDUGqqzHsearch_history' => '%u9633%u6CC9%u5427|1'
+    '_trs_uv' => '20bj_6_ixwimm9z'
+    '_trs_ua_s_1' => '5qj6_6_ixwimm9y'
+    'advanced-frontend' => '5harq7jhfl4skp06ct4jdk3eh5'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpStudy\\php55n;E:\\php4月Linux\\svn客户端\\svn\\bin;;E:\\git\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php70n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2120'
+    'SCRIPT_NAME' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_URI' => '/Learn_more/advanced/frontend/web/index.php?r=cate%2Fcate'
+    'QUERY_STRING' => 'r=cate%2Fcate'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '50775'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/Learn_more/advanced/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3=1482387972,1484746719; Hm_lvt_c2253576311110c0271361e3f50ca002=1482387972,1484746719; iweb_safecode=61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ; pgv_pvi=7560350720; sYQDUGqqzHsearch_history=%u9633%u6CC9%u5427%7C1; _trs_uv=20bj_6_ixwimm9z; _trs_ua_s_1=5qj6_6_ixwimm9y; advanced-frontend=5harq7jhfl4skp06ct4jdk3eh5'
+    'HTTP_REFERER' => 'http://localhost/Learn_more/advanced/frontend/web/index.php?r=index/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486947277.1776
+    'REQUEST_TIME' => 1486947277
+]
+2017-02-13 08:55:06 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(21): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionCate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/cate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist
+The SQL being executed was: SELECT * FROM `type` in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Schema.php:631
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(21): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionCate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/cate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'study.type' doesn't exist
+)
+
+2017-02-13 08:55:06 [::1][-][-][info][application] $_GET = [
+    'r' => 'cate/cate'
+]
+
+$_COOKIE = [
+    'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3' => '1482387972,1484746719'
+    'Hm_lvt_c2253576311110c0271361e3f50ca002' => '1482387972,1484746719'
+    'iweb_safecode' => '61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ'
+    'pgv_pvi' => '7560350720'
+    'sYQDUGqqzHsearch_history' => '%u9633%u6CC9%u5427|1'
+    '_trs_uv' => '20bj_6_ixwimm9z'
+    '_trs_ua_s_1' => '5qj6_6_ixwimm9y'
+    'advanced-frontend' => '5harq7jhfl4skp06ct4jdk3eh5'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpStudy\\php55n;E:\\php4月Linux\\svn客户端\\svn\\bin;;E:\\git\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php70n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2120'
+    'SCRIPT_NAME' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_URI' => '/Learn_more/advanced/frontend/web/index.php?r=cate%2Fcate'
+    'QUERY_STRING' => 'r=cate%2Fcate'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '50784'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/Learn_more/advanced/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3=1482387972,1484746719; Hm_lvt_c2253576311110c0271361e3f50ca002=1482387972,1484746719; iweb_safecode=61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ; pgv_pvi=7560350720; sYQDUGqqzHsearch_history=%u9633%u6CC9%u5427%7C1; _trs_uv=20bj_6_ixwimm9z; _trs_ua_s_1=5qj6_6_ixwimm9y; advanced-frontend=5harq7jhfl4skp06ct4jdk3eh5'
+    'HTTP_REFERER' => 'http://localhost/Learn_more/advanced/frontend/web/index.php?r=index/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486947306.3552
+    'REQUEST_TIME' => 1486947306
+]
+2017-02-13 08:55:09 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(21): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionCate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/cate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'study.type' doesn't exist
+The SQL being executed was: SELECT * FROM `type` in D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Schema.php:631
+Stack trace:
+#0 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
+#3 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#4 D:\phpStudy\WWW\Learn_more\advanced\frontend\controllers\CateController.php(21): yii\db\ActiveQuery->all()
+#5 [internal function]: frontend\controllers\CateController->actionCate()
+#6 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#8 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('cate', Array)
+#9 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('cate/cate', Array)
+#10 D:\phpStudy\WWW\Learn_more\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\phpStudy\WWW\Learn_more\advanced\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'study.type' doesn't exist
+)
+
+2017-02-13 08:55:09 [::1][-][-][info][application] $_GET = [
+    'r' => 'cate/cate'
+]
+
+$_COOKIE = [
+    'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3' => '1482387972,1484746719'
+    'Hm_lvt_c2253576311110c0271361e3f50ca002' => '1482387972,1484746719'
+    'iweb_safecode' => '61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ'
+    'pgv_pvi' => '7560350720'
+    'sYQDUGqqzHsearch_history' => '%u9633%u6CC9%u5427|1'
+    '_trs_uv' => '20bj_6_ixwimm9z'
+    '_trs_ua_s_1' => '5qj6_6_ixwimm9y'
+    'advanced-frontend' => '5harq7jhfl4skp06ct4jdk3eh5'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;D:\\phpStudy\\php55n;E:\\php4月Linux\\svn客户端\\svn\\bin;;E:\\git\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php70n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2120'
+    'SCRIPT_NAME' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_URI' => '/Learn_more/advanced/frontend/web/index.php?r=cate%2Fcate'
+    'QUERY_STRING' => 'r=cate%2Fcate'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '50787'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/Learn_more/advanced/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'Hm_lvt_f4a079b93f8455a44b27c20205cbb8b3=1482387972,1484746719; Hm_lvt_c2253576311110c0271361e3f50ca002=1482387972,1484746719; iweb_safecode=61fe4936c5MDcwODUwOTMwMmZmYjE1NDc0MDQ7Yzg1Yzg0ZjkzY2MwN2UwNGZhNzVhPjgwPDIyMTwyMjJgZjExNjE4YThiMQ; pgv_pvi=7560350720; sYQDUGqqzHsearch_history=%u9633%u6CC9%u5427%7C1; _trs_uv=20bj_6_ixwimm9z; _trs_ua_s_1=5qj6_6_ixwimm9y; advanced-frontend=5harq7jhfl4skp06ct4jdk3eh5'
+    'HTTP_REFERER' => 'http://localhost/Learn_more/advanced/frontend/web/index.php?r=index/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Learn_more/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486947309.4564
+    'REQUEST_TIME' => 1486947309
+]
