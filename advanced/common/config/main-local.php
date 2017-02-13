@@ -7,7 +7,7 @@ return [
             'username' => 'study',
             'password' => '123456',
             'charset' => 'utf8',
-            'tablePrefix' => 'study_', // 表前缀：t_
+            //'tablePrefix' => 'study_', // 表前缀：t_
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

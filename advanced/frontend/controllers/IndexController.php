@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 
-class IndexController extends \yii\web\Controller
+class IndexController extends CommonController
 {
 	#404时调用
 	public $enableCsrfValidation = false;
