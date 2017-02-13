@@ -40,7 +40,7 @@ class AdvController extends CommonController
                 $filename = $file->name;
                 //$reg = $StudyAdv->addAdv($title,$url,$filename,$desc,$sort);
                  $db = \Yii::$app->db->createCommand();
-                 $reg = $db->insert('study_adv' , ['adv_title'=>$title,'adv_url'=>$url,'adv_img'=>$filename,'adv_desc'=>$desc,'adv_sort'=>$sort])->execute();
+                 $reg = $db->insert('study_adv' , ['adv_title'=>$title,'adv_url'=>$url,'adv_img'=>$filename,'adv_desc'=>$desc,'adv_sort'=>$sort])->execute();//执行添加操作
         			// $StudyAdv->adv_title=$title;
 				    // $StudyAdv->adv_url=$url;
 				    // $StudyAdv->adv_img=$filename;
@@ -72,11 +72,11 @@ class AdvController extends CommonController
     {
         $request = Yii::$app->request;
         $post = $request->post();
-        $adv_id = $post['id'];
-        $adv = new StudyAdv();
-        $reg = $adv->updateAdv($adv_id);
-        return json_encode($reg);
-    }
+        $adv_id = $post['id'];       //获取到轮播图的ID
+        $adv = new StudyAdv();      
+        $reg = $adv->updateAdv($adv_id);     //调用Adv model 并将要查询的ID传入model
+        return json_encode($reg);        //获取数据后转化为json格式传到前台页面
+    } 
     /**
      * 根据ID修改轮播图信息
      */
@@ -85,7 +85,7 @@ class AdvController extends CommonController
         $request = Yii::$app->request;
         if($request->isPost)
         {
-            $post = $request->post();
+            $post = $request->post();   //接受要修改的轮播图的信息
             $adv_id = $post['adv_id'];
             $adv_title = $post['title'];
             $adv_url = $post['url'];
@@ -102,6 +102,7 @@ class AdvController extends CommonController
                     $filename = $file->name;
                     //$reg = $StudyAdv->addAdv($title,$url,$filename,$desc,$sort);
                      $db = \Yii::$app->db->createCommand();
+                     //执行轮播图单条修改
                      $reg = $db->update('study_adv' , ['adv_title'=>$adv_title,'adv_url'=>$adv_url,'adv_img'=>$filename,'adv_desc'=>$adv_desc,'adv_sort'=>$adv_sort], ['adv_id'=>$adv_id])->execute();
 
                     if($reg)

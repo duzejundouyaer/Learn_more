@@ -20,7 +20,6 @@ class CateController extends Controller
         $type=new Type();
         $info=$type::find()->asArray()->all();
         $data=$this->recursion($info);
-        //print_r($data);die;
         return $this->render('cate',['data'=>$data]);
     }
     //添加分类

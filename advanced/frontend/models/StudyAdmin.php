@@ -74,7 +74,7 @@ class StudyAdmin extends \yii\db\ActiveRecord
             {
                $error['code'] = 1;
                $error['admin_id'] = $admin_id;
-               $error['status'] = $res['admin_status'];
+               $error['status'] = $admin_id;
                return $error;
             }else
             {
